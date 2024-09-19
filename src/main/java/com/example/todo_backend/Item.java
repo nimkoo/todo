@@ -2,12 +2,15 @@ package com.example.todo_backend;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import java.util.Date;
 
 @Entity
 public class Item {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
     private Boolean isComplete;
@@ -35,7 +38,7 @@ public class Item {
     }
 
     public void setComplete(Boolean complete) {
-        isComplete = complete;
+        this.isComplete = complete;
     }
 
     public Date getDueDate() {
