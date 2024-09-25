@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")   // Allow requests from the front end
 @RestController
 @RequestMapping("/api/items")
 public class ItemController {
